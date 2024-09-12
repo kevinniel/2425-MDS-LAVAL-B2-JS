@@ -9,6 +9,7 @@
 
 - commentaire : utiliser le double slash ```//```
 - afficher une information dans la console : ```console.log()```
+- ```tableau.length``` : donne le nombre de lignes
 
 ## Déclaration de variable en JS
 
@@ -32,3 +33,20 @@ Exemple :
 - ```document.querySelector('table')```
 - ```document.querySelector('.toto')```
 - ```document.querySelector('#tata')```
+
+### Récupération avancée en JS
+
+Vous pouvez effectuer une sélection à partir d'un élément déjà sélectionner en JS
+
+exemple : 
+```js
+// Cette ligne sélectionne la première balise <table> de la page
+const toto = document.querySelector('table')
+// Cette ligne sélectionne toutes les balises <td> de l'élément précédemment sélectionné <table>, stocké dans la variable "toto"
+const ligne_1 = toto.querySelectorAll('td')
+```
+
+## Comment intégrer des valeurs dans du HTML en JS
+
+- ```element.innerText = "toto"``` : insère ou remplace la valeur "toto" en tant que **CONTENU TEXTUEL** dans l'élément
+- ```element.innerHTML = "toto"``` : insère ou remplace la valeur "toto" en tant que **CONTENU HTML** dans l'élément
