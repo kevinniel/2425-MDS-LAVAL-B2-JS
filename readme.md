@@ -5,6 +5,19 @@
 - balises ```<script></script>```
 - positionnées juste avant la fermeture de la balise ```</body>```
 
+## Bases du JS
+
+- commentaire : utiliser le double slash ```//```
+- afficher une information dans la console : ```console.log()```
+
+## Déclaration de variable en JS
+
+Déclarons une variable "toto" de 3 manière différentes
+
+- ```const toto``` : ```const``` : lorsque l'on sélectionne des éléments HTML
+- ```let toto``` : ```let``` : le reste 😇
+- ```var toto``` : ```var``` : ne jamais utiliser 😁
+
 ## Comment récupérer des informations en JS ?
 
 - ```document.querySelector('[selecteur]')``` : ne récupère Qu'un seul élément : le premier qu'il trouve !
