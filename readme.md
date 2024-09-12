@@ -72,3 +72,43 @@ const ligne_1 = toto.querySelectorAll('td')
 
 - ```element.innerText = "toto"``` : insère ou remplace la valeur "toto" en tant que **CONTENU TEXTUEL** dans l'élément
 - ```element.innerHTML = "toto"``` : insère ou remplace la valeur "toto" en tant que **CONTENU HTML** dans l'élément
+
+## Les écouteurs d'événements
+
+- Permettent d'écouter les évènements
+- S'applique sur un element
+
+Exemple :
+
+```js
+const element = document.querySelector("form")
+// Ajouter un écouteur d'évènement dessus
+element.addEventListener('submit', function(event) {
+    // le code ici s'executera à la soumission de l'element
+
+    // permet d'éviter le comportement natif du navigateur
+    event.preventDefault()
+
+    // exécuter le code souhaité
+})
+```
+
+### Les types d'évenements
+
+- ```submit``` : soumission d'un élément
+- ```click``` : au clic d'un élément
+- ```hover``` : au survol d'un élément
+
+
+## Création de HTML
+
+- ```document.createElement('td')``` : crée une balise ```<td></td>```
+- ```element.classList``` : permet d'interagir avec les classes HTML des éléments
+- ```element.append(toto)``` : ajoute "toto" à la fin de "element"
+
+## Création de fonctions simples
+
+Les fonctions permettent d'avoir du code réutilisable
+
+- ```function nom() {// code ici}``` : permet de déclarer une fonction, qui s'appelle ici "nom"
+- ```nom()``` : permet d'appeler une fonction pour qu'elle s'exécute !

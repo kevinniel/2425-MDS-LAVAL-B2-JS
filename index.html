@@ -8,7 +8,26 @@
 <body>
     <h1>CARLIN</h1>
 
+    <h2>Formulaire</h2>
+
+    <form action="">
+        <div>
+            id : <input id="id" type="text">
+        </div>
+        <div>
+            nom : <input id="nom" type="text">
+        </div>
+        <div>
+            age : <input id="age" type="number">
+        </div>
+        <div>
+            <button type="submit">Ajouter le carlin !</button>
+        </div>
+    </form>
+
     <hr>
+
+    <h2>Liste</h2>
 
     <table id="tata" border="1">
         <thead class="toto">
@@ -64,46 +83,92 @@
     </ul>
 
     <script>
-        // code JS ICI
-        // But : remplir la liste de statistiques <ul>
-        // Liste des étapes
-        // 1. Récupérer les informations du tableau
-        // age, prénom, nombre de ligne, colonnes...
-        console.log( document.querySelectorAll('tbody tr') )
-        // 2. Les stocker dans des variables
-        const lignes = document.querySelectorAll('tbody tr')
-        console.log(lignes.length)
-        // 3. Faire les calculs
-        // - nb de lignes
-        let nb_carlin = lignes.length
-        console.log( nb_carlin )
-        // - addition des ages des lignes
-        console.log( lignes[0].querySelector('.age').innerText )
+        
+        function Kalcul() {
+            // code JS ICI
+            // But : remplir la liste de statistiques <ul>
+            // Liste des étapes
+            // 1. Récupérer les informations du tableau
+            // age, prénom, nombre de ligne, colonnes...
+            console.log( document.querySelectorAll('tbody tr') )
+            // 2. Les stocker dans des variables
+            const lignes = document.querySelectorAll('tbody tr')
+            console.log(lignes.length)
+            // 3. Faire les calculs
+            // - nb de lignes
+            let nb_carlin = lignes.length
+            console.log( nb_carlin )
+            // - addition des ages des lignes
+            console.log( lignes[0].querySelector('.age').innerText )
 
-        let somme_ages = 0
-        for ( let i = 0; i < lignes.length; i++ ) {
-            console.log("ici : ", i)
-            somme_ages = somme_ages + parseInt(lignes[i].querySelector('.age').innerText)
-            console.log("somme_ages", somme_ages)
+            let somme_ages = 0
+            for ( let i = 0; i < lignes.length; i++ ) {
+                console.log("ici : ", i)
+                somme_ages = somme_ages + parseInt(lignes[i].querySelector('.age').innerText)
+                console.log("somme_ages", somme_ages)
+            }
+            
+            
+            // parseInt(lignes[0].querySelector('.age').innerText) + parseInt(lignes[1].querySelector('.age').innerText) + parseInt(lignes[2].querySelector('.age').innerText)
+
+
+            console.log(somme_ages)
+            // - addition des ages des lignes / nb de lignes
+            let moyenne_age = somme_ages / nb_carlin
+            console.log(moyenne_age)
+            // 4. Intégrer les résultats dans la liste
+            const result_nb_carlin = document.querySelector("#nb_carlin")
+            result_nb_carlin.innerText = nb_carlin
+
+            const result_somme_ages = document.querySelector('#somme_ages')
+            result_somme_ages.innerText = somme_ages
+
+            const result_moyenne_age = document.querySelector('#moyenne_age')
+            result_moyenne_age.innerText = moyenne_age
         }
-        
-        
-        // parseInt(lignes[0].querySelector('.age').innerText) + parseInt(lignes[1].querySelector('.age').innerText) + parseInt(lignes[2].querySelector('.age').innerText)
 
+        Kalcul()
 
-        console.log(somme_ages)
-        // - addition des ages des lignes / nb de lignes
-        let moyenne_age = somme_ages / nb_carlin
-        console.log(moyenne_age)
-        // 4. Intégrer les résultats dans la liste
-        const result_nb_carlin = document.querySelector("#nb_carlin")
-        result_nb_carlin.innerText = nb_carlin
+        // GESTION DE L'EVENTLISTENER
+        const element = document.querySelector("form")
+        // Ajouter un écouteur d'évènement dessus
+        element.addEventListener('submit', function(event) {
+            // le code ici s'executera à la soumission de l'element
 
-        const result_somme_ages = document.querySelector('#somme_ages')
-        result_somme_ages.innerText = somme_ages
+            // permet d'éviter le comportement natif du navigateur
+            event.preventDefault()
+            // récupérer les informations du formulaire
+            const id = document.querySelector("#id").value
+            const nom = document.querySelector("#nom").value
+            const age = document.querySelector("#age").value
+            console.log(id, nom, age)
+            // Ajouter les informations au tableau
+            // 1. création de la ligne HTML
+            const tr = document.createElement('tr')
+            const td1 = document.createElement('td')
+            const td2 = document.createElement('td')
+            const td3 = document.createElement('td')
+            td3.classList.add('age')
+            // 2. Intégrer les valeurs
+            td1.innerText = id
+            td2.innerText = nom
+            td3.innerText = age
+            // 3. on injecte les 3 TD dans le TR
+            tr.append(td1)
+            tr.append(td2)
+            tr.append(td3)
+            // 4. on injecte le tr à la fin du tbody du tableau
+            const tbody = document.querySelector('tbody')
+            tbody.append(tr)
+            // logs pour infos
+            console.log(tr)
+            console.log(td1)
+            console.log(td2)
+            console.log(td3)
+            // TODO => MAJ STATS
+            Kalcul()
+        })
 
-        const result_moyenne_age = document.querySelector('#moyenne_age')
-        result_moyenne_age.innerText = moyenne_age
     </script>
 </body>
 </html>
