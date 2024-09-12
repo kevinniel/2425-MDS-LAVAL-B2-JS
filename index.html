@@ -22,17 +22,27 @@
             <tr>
                 <td>1</td>
                 <td>Guy</td>
-                <td>35</td>
+                <td class="age">40</td>
             </tr>
             <tr>
                 <td>4</td>
                 <td>Teddy</td>
-                <td>3</td>
+                <td class="age">3</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>pierrot</td>
+                <td class="age">2</td>
             </tr>
             <tr>
                 <td>9</td>
                 <td>Donachien</td>
-                <td>17</td>
+                <td class="age">17</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Momo</td>
+                <td class="age">8</td>
             </tr>
         </tbody>
     </table>
@@ -46,10 +56,10 @@
             Nombre de carlins dans le tableau : <span id="nb_carlin"></span>
         </li>
         <li>
-            La somme des âges de tous les carlins : 
+            La somme des âges de tous les carlins : <span id="somme_ages"></span>
         </li>
         <li>
-            Moyenne d'âge des carlins : 
+            Moyenne d'âge des carlins : <span id="moyenne_age"></span>
         </li>
     </ul>
 
@@ -68,10 +78,32 @@
         let nb_carlin = lignes.length
         console.log( nb_carlin )
         // - addition des ages des lignes
-        // - addition des ages des lignes / nb de lignes 
+        console.log( lignes[0].querySelector('.age').innerText )
+
+        let somme_ages = 0
+        for ( let i = 0; i < lignes.length; i++ ) {
+            console.log("ici : ", i)
+            somme_ages = somme_ages + parseInt(lignes[i].querySelector('.age').innerText)
+            console.log("somme_ages", somme_ages)
+        }
+        
+        
+        // parseInt(lignes[0].querySelector('.age').innerText) + parseInt(lignes[1].querySelector('.age').innerText) + parseInt(lignes[2].querySelector('.age').innerText)
+
+
+        console.log(somme_ages)
+        // - addition des ages des lignes / nb de lignes
+        let moyenne_age = somme_ages / nb_carlin
+        console.log(moyenne_age)
         // 4. Intégrer les résultats dans la liste
         const result_nb_carlin = document.querySelector("#nb_carlin")
         result_nb_carlin.innerText = nb_carlin
+
+        const result_somme_ages = document.querySelector('#somme_ages')
+        result_somme_ages.innerText = somme_ages
+
+        const result_moyenne_age = document.querySelector('#moyenne_age')
+        result_moyenne_age.innerText = moyenne_age
     </script>
 </body>
 </html>

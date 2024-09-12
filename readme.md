@@ -5,6 +5,28 @@
 - balises ```<script></script>```
 - positionnées juste avant la fermeture de la balise ```</body>```
 
+## Les Types en JS
+
+- ```Boolean``` : true (1) / false (0)
+- ```String``` : Chaine de caractère
+- ```Integer || Int``` : Nombre entier
+- ```Float``` : Nombre à virgule
+
+## Les boucles en JS
+
+permet d'itérer sur des éléments. Exemple : 
+
+```js
+let tablo = [1, 2, 3, 4, 5]
+
+// je veux afficher tous les nombres, un par un (console.log)
+
+for ( let i = 0; i < tablo.length - 1; i++ ) {
+    console.log(i)
+    console.log( tablo[i] )
+}
+```
+
 ## Bases du JS
 
 - commentaire : utiliser le double slash ```//```
