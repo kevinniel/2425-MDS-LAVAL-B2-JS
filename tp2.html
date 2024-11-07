@@ -22,6 +22,7 @@
                 <th>ID</th>
                 <th>Nom</th>
                 <th>Votes</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -46,6 +47,7 @@
                 <td>${tablo.dataset.id}</td>
                 <td>${namefield.value}</td>
                 <td>0</td>
+                <td><button class="vote">+1</button></td>
             `
             tr.innerHTML = html
             let tbody = document.querySelector("tbody")
