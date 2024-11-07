@@ -29,7 +29,7 @@
         </tbody>
     </table>
     <script>
-        // JS
+        // gestion du formulaire
         let form = document.querySelector("#addcandidat")
         form.addEventListener("submit", function(e){
             e.preventDefault()
@@ -46,7 +46,7 @@
             let html = `
                 <td>${tablo.dataset.id}</td>
                 <td>${namefield.value}</td>
-                <td>0</td>
+                <td class="votes">0</td>
                 <td><button class="vote">+1</button></td>
             `
             tr.innerHTML = html
@@ -56,7 +56,23 @@
             // réinitialisation
             namefield.value = ""
             tablo.dataset.id = parseInt(tablo.dataset.id) + 1
+
+            let btn = tr.querySelector(".vote")
+            manage_btn_vote(btn)
         }
+
+        function manage_btn_vote(btn){
+            btn.addEventListener("click", function(e){
+                e.preventDefault()
+                let tr = e.target.parentNode.parentNode
+                let td_vote = tr.querySelector(".votes")
+                td_vote.innerText = parseInt(td_vote.innerText) + 1
+            })
+        }
+
+        // gestion des votes
+        let btn_votes = document.querySelectorAll(".vote")
+        console.log(btn_votes)
     </script>
 </body>
 </html>
