@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elections</title>
+</head>
+<body>
+    <form id="addcandidat" action="">
+        <div>
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" name="nom">
+        </div>
+        <div>
+            <button type="submit">Ajouter</button>
+        </div>
+    </form>
+    <hr>
+    <table data-id="0" border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Votes</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script>
+        // JS
+        let form = document.querySelector("#addcandidat")
+        form.addEventListener("submit", function(e){
+            e.preventDefault()
+            addLine()
+        })
+
+        function addLine() {
+            let namefield = document.querySelector("#nom")
+
+            // déterminer le id
+            let tablo = document.querySelector("table")
+
+            let tr = document.createElement("tr")
+            let html = `
+                <td>${tablo.dataset.id}</td>
+                <td>${namefield.value}</td>
+                <td>0</td>
+            `
+            tr.innerHTML = html
+            let tbody = document.querySelector("tbody")
+            tbody.append(tr)
+
+            namefield.value = ""
+            tablo.dataset.id = parseInt(tablo.dataset.id) + 1
+        }
+    </script>
+</body>
+</html>

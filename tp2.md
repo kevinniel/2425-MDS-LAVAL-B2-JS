@@ -9,7 +9,6 @@ Sujet : Élections : application de vote
 - Affiche les candidats dans un tableau (id, nom, nb_vote)
 - Créer un formulaire pour ajouter des candidats (nom)
     - Lorsque l'on valide le formulaire, le nom est ajouté au tableau, et l'id est créé automatiquement, et les votes sont mis à 0
-- Modification des noms
 
 ### 2. Gestion des votes
 
@@ -19,6 +18,7 @@ Sujet : Élections : application de vote
 ### 3. Vérifications
 
 (les vérifications devront se faire en même temps que l'on saisi les informations ! )
+- Modification des noms
 - le nom d'un candidat ne doit pas contenir de caractères spéciaux ou de chiffres
 - le nom doit contenir au minimum 3 caractères
 

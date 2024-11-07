@@ -112,3 +112,10 @@ Les fonctions permettent d'avoir du code réutilisable
 
 - ```function nom() {// code ici}``` : permet de déclarer une fonction, qui s'appelle ici "nom"
 - ```nom()``` : permet d'appeler une fonction pour qu'elle s'exécute !
+
+## Les data-attributes
+
+Gère des attributs customs dans le HTML
+
+- ```element.dataset.id``` : permet de récupérer la valeur contenu dans ```data-id```
+- ```element.dataset.toto``` : permet de récupérer la valeur contenu dans ```data-toto```
