@@ -13,12 +13,12 @@ Sujet : Élections : application de vote
 ### 2. Gestion des votes
 
 - On doit pouvoir voter pour un candidat avec un bouton "+"
-- Si un ou plusieurs votes sont présents pour un candidat, on ne peut plus modifier son nom
 
 ### 3. Vérifications
 
 (les vérifications devront se faire en même temps que l'on saisi les informations ! )
 - Modification des noms
+    - Si un ou plusieurs votes sont présents pour un candidat, on ne peut plus modifier son nom
 - le nom d'un candidat ne doit pas contenir de caractères spéciaux ou de chiffres
 - le nom doit contenir au minimum 3 caractères
 
